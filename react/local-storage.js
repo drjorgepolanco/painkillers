@@ -8,6 +8,7 @@
   localStorage.
 */
 
+
 // In a Class
 // https://stackoverflow.com/questions/59540321/in-reactjs-and-nextjs-constructor-getting-reference-error-localstorage-is-not-d
 
@@ -15,31 +16,35 @@ constructor() {
   super()
   this.state = {
     students: [],
-    student: null
+    student: null,
     token: null,
     isLoggedIn: null
   };
 }
 componentDidMount() {
-  this.login();
   this.setState({
-    student: localStorage.getItem('student') || {},
-    token: localStorage.getItem('token') || "",
+    student:    localStorage.getItem('student') || {},
+    token:      localStorage.getItem('token') || "",
     isLoggedIn: (localStorage.getItem('student' == null)) ? false : true
   });
 }
 
 
+
+
 /* In a Hook */
+
+const [links, setLinks] = useState([]);
+
 const getLinks = async () => {
   try {
     const res       = await wp.get('/menus/v1/menus/header');
     const linksData = await res.data;
 
-    localStorage.setItem('headerLinks', JSON.stringify(linksData.items));
-    const headerLinks = JSON.parse(localStorage.getItem('headerLinks'));
+    localStorage.setItem('myLinks', JSON.stringify(linksData.items));
+    const myLinks = JSON.parse(localStorage.getItem('myLinks'));
 
-    setLinks(headerLinks);
+    setLinks(myLinks);
   } 
   catch (error) {
     console.warn(error);
