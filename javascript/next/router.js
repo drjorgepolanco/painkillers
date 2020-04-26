@@ -24,3 +24,18 @@ const Post = () => {
 }
  
 export default Post;
+
+
+
+/* Dynamic Routing */
+
+// https://github.com/zeit/next.js/tree/canary/examples/dynamic-routing
+
+
+// This example shows how to do dynamic routing in Next.js. It contains two dynamic routes:
+
+// pages/post/[id]/index.js
+  // e.g. matches /post/my-example (/post/:id)
+
+// pages/post/[id]/[comment].js
+  // e.g. matches /post/my-example/a-comment (/post/:id/:comment)
