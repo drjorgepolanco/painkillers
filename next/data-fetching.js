@@ -1,5 +1,12 @@
 /* Fetch the detail page of each Page */
 
+/* 
+
+- In /pages/[slug].js
+- For other Post Type, save in: /pages/post-types-name/[slug].js
+
+*/
+
 import axios from 'axios';
  
 const Page = ({ page }) => (

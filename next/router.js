@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import Link          from 'next/link';
-import Header        from '../../../components/header';
  
 const Post = () => {
  const router = useRouter()
@@ -8,8 +7,6 @@ const Post = () => {
  
  return (
    <>
-     <Header />
-     <h1>Post: {id}</h1>
      <ul>
        <li>
          <Link href='/post/[id]/[comment]' as={`/post/${id}/first-comment`}>
@@ -26,4 +23,4 @@ const Post = () => {
  )
 }
  
-export default Post
+export default Post;
